@@ -11,9 +11,14 @@ function ComponenteFuncional() {
 
 
 class App extends React.Component {
+
+  state = {
+    nome: "Douglas Souza"
+  }
+
   render() {
     return (
-      <h1>Hello from App</h1>
+      <h1>Hello {this.state.nome}</h1>
     )
   }
 }
