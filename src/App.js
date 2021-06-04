@@ -13,12 +13,20 @@ function ComponenteFuncional() {
 class App extends React.Component {
 
   state = {
-    nome: "Douglas Souza"
+    nome: ""
+  }
+
+  modificaNome = (event) => {
+    let novoNome = event.target.value;
+    this.setState({ nome: novoNome });
   }
 
   render() {
     return (
-      <h1>Hello {this.state.nome}</h1>
+      <>
+        <input type="text" value={this.state.nome} onChange={this.modificaNome} />
+        <h1>Hello {this.state.nome}</h1>
+      </>
     )
   }
 }
