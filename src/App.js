@@ -22,15 +22,28 @@ class App extends React.Component {
     this.setState({ nome: novoNome });
   }
 
+  criaComboBox = () => {
+    const opccoes = ["fulano", "Ciclano"];
+    const comboOptions = opccoes.map((opcao) => <option>{opcao}</option>);
+
+    return (
+      <select>
+        {comboOptions}
+      </select>
+    )
+  }
+
   render() {
 
-    /* utilização de array no retorno de componentes */
+    const ComboBox = () => this.criaComboBox();
+
     return (
-      [
-        <input type="text" value={this.state.nome} onChange={this.modificaNome} />,
-        <h1>Hello {this.state.nome}</h1>,
-        <p>Outro componente no estilo array</p>
-      ]
+      <>
+        <input type="text" value={this.state.nome} onChange={this.modificaNome} />
+        <h1>Hello {this.state.nome}</h1>
+
+        <ComboBox></ComboBox>
+      </>
     )
   }
 }
