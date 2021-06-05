@@ -24,7 +24,7 @@ class App extends React.Component {
 
   criaComboBox = () => {
     const opccoes = ["fulano", "Ciclano"];
-    const comboOptions = opccoes.map((opcao) => <option>{opcao}</option>);
+    const comboOptions = opccoes.map((opcao, i) => <option key={i}>{opcao}</option>);
 
     return (
       <select>
@@ -33,16 +33,21 @@ class App extends React.Component {
     )
   }
 
-  render() {
+  componentDidMount() {
+    console.log("Executou o componentDidMount()");
+  }
 
-    const ComboBox = () => this.criaComboBox();
+  render() {
+    console.log("executou o render()");
+
+
 
     return (
+
       <>
         <input type="text" value={this.state.nome} onChange={this.modificaNome} />
         <h1>Hello {this.props.nome}</h1>
 
-        <ComboBox></ComboBox>
       </>
     )
   }
