@@ -1,28 +1,14 @@
 import React from "react";
 
 
-function ComponenteFuncional() {
-  return (
-    <h1>
-      Hello World
-    </h1>
-  );
-}
+function App(props) {
 
+  const modificaNome = (event) => {
+    console.log(event.target.value);
 
-class App extends React.Component {
-
-  state = {
-    nome: ""
   }
 
-
-  modificaNome = (event) => {
-    let novoNome = event.target.value;
-    this.setState({ nome: novoNome });
-  }
-
-  criaComboBox = () => {
+  const criaComboBox = () => {
     const opccoes = ["fulano", "Ciclano"];
     const comboOptions = opccoes.map((opcao, i) => <option key={i}>{opcao}</option>);
 
@@ -33,24 +19,16 @@ class App extends React.Component {
     )
   }
 
-  componentDidMount() {
-    console.log("Executou o componentDidMount()");
-  }
-
-  render() {
-    console.log("executou o render()");
+  const MeucomboBox = () => criaComboBox();
 
 
-
-    return (
-
-      <>
-        <input type="text" value={this.state.nome} onChange={this.modificaNome} />
-        <h1>Hello {this.props.nome}</h1>
-
-      </>
-    )
-  }
+  return (
+    <>
+      <input type="text" value={props.nome} onChange={modificaNome} />
+      <h1>Hello {props.nome}</h1>
+      <MeucomboBox />
+    </>
+  )
 }
 
 export default App;
