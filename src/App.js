@@ -23,6 +23,8 @@ class App extends React.Component {
   }
 
   render() {
+
+    /* utilização de array no retorno de componentes */
     return (
       [
         <input type="text" value={this.state.nome} onChange={this.modificaNome} />,
