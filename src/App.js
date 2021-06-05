@@ -24,10 +24,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
-        <input type="text" value={this.state.nome} onChange={this.modificaNome} />
-        <h1>Hello {this.state.nome}</h1>
-      </>
+      [
+        <input type="text" value={this.state.nome} onChange={this.modificaNome} />,
+        <h1>Hello {this.state.nome}</h1>,
+        <p>Outro componente no estilo array</p>
+      ]
     )
   }
 }
