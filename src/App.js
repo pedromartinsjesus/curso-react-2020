@@ -16,12 +16,8 @@ class App extends React.Component {
     nome: ""
   }
 
-  constructor() {
-    super()
-    this.modificaNome = this.modificaNome.bind(this); /* Aqui o this do funcao recebe o this da classe através do método bind() */
-  }
 
-  modificaNome(event) {
+  modificaNome = (event) => {
     let novoNome = event.target.value;
     this.setState({ nome: novoNome });
   }
