@@ -21,7 +21,6 @@ function App(props) {
 
   const MeucomboBox = () => criaComboBox();
 
-
   return (
     <>
       <input className="texto-centralizado" type="text" value={props.nome} onChange={modificaNome} />
