@@ -3,29 +3,11 @@ import React from "react";
 
 function App(props) {
 
-  const modificaNome = (event) => {
-    console.log(event.target.value);
-
-  }
-
-  const criaComboBox = () => {
-    const opccoes = ["fulano", "Ciclano"];
-    const comboOptions = opccoes.map((opcao, i) => <option key={i}>{opcao}</option>);
-
-    return (
-      <select>
-        {comboOptions}
-      </select>
-    )
-  }
-
-  const MeucomboBox = () => criaComboBox();
+  /* Nesta aula somente foi apresentado o projeto em slides que eu salvei no google docs. */
 
   return (
     <>
-      <input className="texto-centralizado" type="text" value={props.nome} onChange={modificaNome} />
-      <h1>Hello {props.nome}</h1>
-      <MeucomboBox />
+
     </>
   )
 }
